@@ -6,7 +6,7 @@ import Gateux from "./Tea";
 import Tea from "./Tea";
 
 
-const Productlist = () => {
+const Productlist = ({Gateau}) => {
     return (
       <div className={styles.container}>
         <h1 className={styles.title}>NOS GATEAUX</h1>
@@ -16,10 +16,12 @@ const Productlist = () => {
           sit amet, consectetur adipiscing elit.
         </p>
         <div className={styles.wrapper}>
-<Gateux/>
-<Gateux/>
-<Gateux/>
-<Gateux/>
+          {Gateau.map (( Gateau) =>(
+            <Gateux key={Gateau._id} Gateau={Gateau}/>
+          ))
+          }
+
+
       </div>
       <h1 className={styles.title}>NOS BOISONS</h1>
         <p className={styles.desc}>
