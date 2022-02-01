@@ -53,5 +53,16 @@ const Productlist = ({Gateau}) => {
       </div>
     );
   };
+  export const  getServerSideProps = async () => {
+
+    const res = await axios.get ("http://localhost:3000/api/gateau");
+    return {
+      props:{
+        Gateau:res.data
+      }
+      
+    }
+    
+  }
   
 export default Productlist
